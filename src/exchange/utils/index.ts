@@ -6,7 +6,8 @@ import { BEP20NameBytes } from "../../../generated/Factory/BEP20NameBytes";
 import { Factory as FactoryContract } from "../../../generated/templates/Pair/Factory";
 
 export const ADDRESS_ZERO = "0x0000000000000000000000000000000000000000";
-export const FACTORY_ADDRESS = "0xca143ce32fe78f1f7019d7d551a6402fc5350c73";
+export const FACTORY_ADDRESS = "0xC537b7EB341A617F3b602c301b6A093ab8b20B35"; //rinkeby
+// export const FACTORY_ADDRESS = "0xca143ce32fe78f1f7019d7d551a6402fc5350c73";
 
 export let ZERO_BI = BigInt.fromI32(0);
 export let ONE_BI = BigInt.fromI32(1);

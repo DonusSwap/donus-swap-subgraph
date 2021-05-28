@@ -3,9 +3,14 @@ import { BigDecimal, Address } from "@graphprotocol/graph-ts/index";
 import { Pair, Token, Bundle } from "../../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 
-const WBNB_ADDRESS = "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c";
-const BUSD_WBNB_PAIR = "0x58f876857a02d6762e0101bb5c46a8c1ed44dc16"; // created block 589414
-const USDT_WBNB_PAIR = "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae"; // created block 648115
+//rinkeby
+const WBNB_ADDRESS = "0xdf032bc4b9dc2782bb09352007d4c57b75160b15";
+const BUSD_WBNB_PAIR = "0xb6dd8e98cc609b711b5c1d4e2a98c3053e880075"; // created block 589414
+const USDT_WBNB_PAIR = "0xBCdB3Fb9c2E7e80E6E614F9b58271354a5D9d94c"; // created block 648115
+
+// const WBNB_ADDRESS = "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c";
+// const BUSD_WBNB_PAIR = "0x58f876857a02d6762e0101bb5c46a8c1ed44dc16"; // created block 589414
+// const USDT_WBNB_PAIR = "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae"; // created block 648115
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
@@ -29,20 +34,26 @@ export function getBnbPriceInUSD(): BigDecimal {
     return ZERO_BD;
   }
 }
-
-// token where amounts should contribute to tracked volume and liquidity
+//rinkeby
 let WHITELIST: string[] = [
-  "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", // WBNB
-  "0xe9e7cea3dedca5984780bafc599bd69add087d56", // BUSD
-  "0x55d398326f99059ff775485246999027b3197955", // USDT
-  "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", // USDC
-  "0x23396cf899ca06c4472205fc903bdb4de249d6fc", // UST
-  "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
-  "0x2170ed0880ac9a755fd29b2688956bd959f933f8", // WETH
+  "0xdf032bc4b9dc2782bb09352007d4c57b75160b15", // WBNB
+  "0xB1e9C21C30b7d827Af3c1d6078E199F58996aF61", // BUSD
+  "0x57bb533ce408075dac6fb1717c60d0d9ce24ec24", // USDT
 ];
 
+// token where amounts should contribute to tracked volume and liquidity
+// let WHITELIST: string[] = [
+//   "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", // WBNB
+//   "0xe9e7cea3dedca5984780bafc599bd69add087d56", // BUSD
+//   "0x55d398326f99059ff775485246999027b3197955", // USDT
+//   "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", // USDC
+//   "0x23396cf899ca06c4472205fc903bdb4de249d6fc", // UST
+//   "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
+//   "0x2170ed0880ac9a755fd29b2688956bd959f933f8", // WETH
+// ];
+
 // minimum liquidity for price to get tracked
-let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("10");
+let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("1");
 
 /**
  * Search through graph to find derived BNB per token.

@@ -6,7 +6,7 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: ConverterRegistryContract
-    network: bsc
+    network: rinkeby
     source:
       address: '0xCd267d0feb8F71B2a7783a8752C1f76e62dcDcAF'
       abi: ConverterRegistryContract
